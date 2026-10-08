@@ -1,3 +1,41 @@
+# Oliver's Christmas Missions (edição storybook) 🎄
+
+Nova versão no estilo das referências: **ilustração de página dupla**, texto no canto superior esquerdo, moldura de foto no canto superior direito, e os mesmos personagens em todas as cenas.
+
+## Personagens (consistência)
+Model sheets em `references/`. Todo prompt repete a mesma descrição e anexa as 3 referências:
+- **Oliver**: menino de 5 anos, cabelo castanho ondulado, suéter creme com faixa Fair Isle vermelha (renas, árvores, flocos), jeans cinza dobrado, botas marrons. Na rua: casaco azul-marinho aberto e gorro vermelho.
+- **Biscuit**: filhote de beagle tricolor.
+- **Pip**: elfo pequeno, gorro verde com pompom vinho, cachecol vinho, suéter creme com cinto verde. **Ele se esconde em todas as cenas** ("Can you find Pip?"), uma brincadeira de achar que deixa o livro mais interativo.
+
+## História (cada página puxa a próxima)
+Começa com a caixa do Pip na porta. São 12 missões, e cada uma termina com **"★ One more star on the list."** e um gancho em itálico para a próxima. Termina na manhã de Natal.
+Textos em `storybook/story.js`; prompts de cada cena em `storybook/PROMPTS.md`.
+
+| Págs. | Conteúdo |
+|---|---|
+| 1 | "This book belongs to" (Pip acenando) |
+| 2–3 | Abertura "The Box on the Doorstep" + lista das 12 missões presa na parede |
+| 4–27 | 12 missões: Deck the House, Dear Santa, The Perfect Tree, Made by Me, Lights on Our Street, Snow Day!, Cocoa and a Movie, The Gingerbread House, A Kind Heart, Sing Along, It's a Wrap, Cookies for Santa |
+| 28–29 | Christmas Morning + foto |
+| 30 | My Christmas Memories (Biscuit com as luzinhas) |
+
+## Fotos
+- 8×8: 1 foto 4×6 deitada
+- 11×11: três versões do arquivo, `landscape` (1 deitada), `portrait` (1 em pé) e `two-portrait` (2 em pé)
+
+A janela tem 1,5 mm de folga em volta de cada foto 4×6.
+
+## Como gerar
+1. Gere as ilustrações com os prompts de `storybook/PROMPTS.md` (sempre anexando as 3 imagens de `references/`). Salve em `storybook/illustrations/` com o nome indicado (`spread-00-intro.jpg`, `spread-01.jpg` … `spread-13-christmas-morning.jpg`, `cover.jpg`).
+2. `npm install` e depois `node storybook/build.js --name "Oliver" --year 2026 --from "Grandma"`
+3. Saída em `output/storybook/<nome>/`: miolos da Gelato (8×8 e 11×11 nas 3 variações), capas e PDF digital. Ilustração que ainda não existe aparece como placeholder com o nome do arquivo.
+4. O build avisa quando uma imagem está com menos de 250 dpi. Para imprimir são precisos ~4800×2450 px por página dupla no 8×8 e ~6600×3350 px no 11×11. Use um upscaler (ex.: Upscayl) antes de imprimir.
+
+---
+
+# Versão 1 (vetorial, sem ilustração de cena)
+
 # The Christmas Spirit Missions 🎄
 
 Livro infantil interativo de Natal: **12 missões** para fazer junto com quem recebe o livro, com espaço para colar a foto de cada momento.
