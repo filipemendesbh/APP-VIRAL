@@ -1,0 +1,12 @@
+{
+  "name": "christmas-spirit-missions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive Christmas photo/activity book for kids (Gelato hardcover 8x8 & 11x11 + digital PDF)",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "playwright": "1.56.1"
+  }
+}
